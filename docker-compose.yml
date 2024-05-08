@@ -2,7 +2,7 @@ version: "3"
 networks:
   lms-network:
 services:
-  #######################book-service###########################
+  ######################book-service###########################
   book-app:
     container_name: book-app-container
     image: book-app
@@ -30,7 +30,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     networks:
       - lms-network
-  #######################user-service###########################
+  ######################user-service###########################
   user-app:
     container_name: user-app-container
     image: user-app
@@ -55,6 +55,34 @@ services:
       - "4041:3306"
     environment:
       MYSQL_DATABASE: userdb
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - lms-network
+  #####################payment-service###########################
+  payment-app:
+    container_name: payment-app-container
+    image: payment-app
+    restart: always
+    build: ./PaymentService
+    ports:
+      - "9098:8080"
+    environment:
+      MYSQL_HOST: paymentdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_PORT: 3306
+    networks:
+      - lms-network
+  #######################userdb-service###########################
+  paymentdb:
+    container_name: paymentdb
+    image: mysql:8.0.36
+    volumes:
+      - D:\Projects\college\react\SA\sw-project\userV:/var/lib/mysql
+    ports:
+      - "4048:3306"
+    environment:
+      MYSQL_DATABASE: paymentdb
       MYSQL_ROOT_PASSWORD: root
     networks:
       - lms-network
