@@ -3,7 +3,7 @@ import { apiCalling } from "@/utils/helpers";
 export async function getBooks(query) {
     try {
         const res = await apiCalling(
-            `librarian/books?${query}`,
+            `books?${query}`,
             "GET",
             {},
             {},
@@ -19,7 +19,7 @@ export async function getBooks(query) {
 export async function getCategories() {
     try {
         const res = await apiCalling(
-            `librarian/categories`,
+            `books/category`,
             "GET",
             {},
             {},
@@ -43,7 +43,7 @@ export async function createBook(bookData, setError) {
         // formData.append("categoryId", "1");
         formData.append("isAvailable", true);
         const res = await apiCalling(
-            `librarian/books`,
+            `books`,
             "POST",
             formData,
             {},
@@ -80,7 +80,7 @@ export async function updateBook(bookData, setError) {
         formData.append("categoryId", "1");
         formData.append("isAvailable", true);
         const res = await apiCalling(
-            `librarian/books/${bookData.id}`,
+            `books/${bookData.id}`,
             "PUT",
             formData,
             {},
@@ -103,7 +103,7 @@ export async function updateBook(bookData, setError) {
 export async function deleteBook(id) {
     try {
         const res = await apiCalling(
-            `librarian/books/${id}`,
+            `books/${id}`,
             "DELETE",
             JSON.stringify({
                 id,

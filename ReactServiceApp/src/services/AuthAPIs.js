@@ -3,7 +3,7 @@ import { apiCalling } from "@/utils/helpers";
 export const loginUser = async (email, password) => {
 	try {
 		const response = await apiCalling(
-			"Auth/login",
+			"auth/login",
 			"POST",
 			JSON.stringify({
 				email,
@@ -27,12 +27,13 @@ export const loginUser = async (email, password) => {
 
 export const registerUser = async (username, email, password) => {
 	const response = await apiCalling(
-		"Auth/customer/register",
+		"auth/customer/register",
 		"POST",
 		JSON.stringify({
 			email,
 			password,
 			username,
+			role : "user"
 		}),
 		{},
 		false,

@@ -3,7 +3,7 @@ import { apiCalling } from "@/utils/helpers";
 export async function getBooks(query) {
     try {
         const res = await apiCalling(
-            `user/books?${query}`,
+            `books?${query}`,
             "GET",
             {},
             {},
@@ -19,7 +19,7 @@ export async function getBooks(query) {
 export async function getBook(id) {
     try {
         const res = await apiCalling(
-            `user/books/${id}`,
+            `books/${id}`,
             "GET",
             {},
             {},
@@ -35,7 +35,7 @@ export async function getBook(id) {
 export async function getCategories() {
     try {
         const res = await apiCalling(
-            `librarian/categories`,
+            `books/category`,
             "GET",
             {},
             {},
