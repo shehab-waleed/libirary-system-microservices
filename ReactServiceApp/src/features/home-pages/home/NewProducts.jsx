@@ -6,10 +6,12 @@ import { useGetLastFourBooks } from "./useGetLastFourBooks";
 import withLoadingAndNoData from "@/ui/withLoadingAndNoData";
 
 const NewProductsList = ({ data }) => {
+
+    const preparedData = data?.length ? data : []
     // Render the data
     return (
         <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-12 ">
-            {data.map((book) => (
+            {preparedData?.map((book) => (
                 <BookCard key={book.id} book={book} />
             ))}
         </div>
