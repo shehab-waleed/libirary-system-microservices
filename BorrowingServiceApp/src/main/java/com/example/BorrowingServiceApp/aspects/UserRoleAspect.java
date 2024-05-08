@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserRoleAspect {
 
-    @Before("@annotation(userRoleCheck) && execution(* com.example.BorrowingServiceApp.controller.*(..))  && args(.., credentials)")
+    @Before("@annotation(userRoleCheck) && execution(* com.example.BorrowingServiceApp.controller.*.*(..))  && args(.., credentials)")
     public void checkUserRole(UserRoleCheck userRoleCheck, String credentials) {
         // Extract user ID and user role from credentials header
         String[] parts = credentials.split(",");
