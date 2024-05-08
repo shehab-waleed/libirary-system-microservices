@@ -7,13 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="RandomNumberServiceApp" />
         <module name="BookServiceApp" />
-        <module name="DateTimeServiceApp" />
         <module name="BorrowingServiceApp" />
         <module name="UserServiceApp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DateTimeServiceApp" target="21" />
+      <module name="RandomNumberServiceApp" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
