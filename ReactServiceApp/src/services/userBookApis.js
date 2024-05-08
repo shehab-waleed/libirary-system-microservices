@@ -2,7 +2,14 @@ import { apiCalling } from "@/utils/helpers";
 
 export async function getBooks(query) {
     try {
-        const res = await apiCalling(`user/books?${query}`, "GET", {}, {});
+        const res = await apiCalling(
+            `user/books?${query}`,
+            "GET",
+            {},
+            {},
+            false,
+            "bookService"
+        );
         const data = await res.json();
         return data;
     } catch (error) {
@@ -11,7 +18,14 @@ export async function getBooks(query) {
 }
 export async function getBook(id) {
     try {
-        const res = await apiCalling(`user/books/${id}`, "GET", {}, {});
+        const res = await apiCalling(
+            `user/books/${id}`,
+            "GET",
+            {},
+            {},
+            false,
+            "bookService"
+        );
         const data = await res.json();
         return data;
     } catch (error) {
@@ -20,7 +34,14 @@ export async function getBook(id) {
 }
 export async function getCategories() {
     try {
-        const res = await apiCalling(`librarian/categories`, "GET", {}, {});
+        const res = await apiCalling(
+            `librarian/categories`,
+            "GET",
+            {},
+            {},
+            false,
+            "bookService"
+        );
         const data = await res.json();
         return data;
     } catch (error) {
@@ -29,7 +50,14 @@ export async function getCategories() {
 }
 export async function borrowBook(id) {
     try {
-        const res = await apiCalling(`borrow/${id}/request`, "POST", {}, {});
+        const res = await apiCalling(
+            `borrow/${id}/request`,
+            "POST",
+            {},
+            {},
+            false,
+            "bookService"
+        );
         const data = await res.json();
         if (!res.ok) {
             throw new Error(data.message);

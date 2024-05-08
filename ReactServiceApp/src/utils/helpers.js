@@ -2,6 +2,8 @@ import { getUserFromSession } from "./userSessionActions";
 
 const API_PORTS = {
 	users: 9093,
+	bookService: 9092,
+	borrowService: 9094,
 };
 
 export const apiCalling = async (
