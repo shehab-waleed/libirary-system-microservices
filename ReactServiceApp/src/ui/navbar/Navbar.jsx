@@ -6,7 +6,6 @@ import { useLogout } from "@/features/auth-pages/useLogout";
 import { useAuthContext } from "@/context/AuthContext";
 import { BiLogOut } from "react-icons/bi";
 import { Bell, History, LayoutDashboard, LogOut } from "lucide-react";
-import Announcements from "@/features/announcement/Announcements";
 const NavStyle = styled.nav`
     background: var(--color-grey-0);
     position: fixed;
@@ -97,8 +96,6 @@ const Navbar = () => {
                                             />
                                         </button>
                                     </Link>
-
-                                    <Announcements />
                                 </>
                             )}
 
