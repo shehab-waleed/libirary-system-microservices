@@ -1,11 +1,7 @@
-import {
-	getTokenFromSession,
-	removeTokenFromSession,
-} from "./tokenSessionActions";
 import { getUserFromSession } from "./userSessionActions";
 
 const API_PORTS = {
-	users: 8081,
+	users: 9093,
 };
 
 export const apiCalling = async (
