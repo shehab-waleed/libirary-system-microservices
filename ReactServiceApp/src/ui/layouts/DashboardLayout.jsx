@@ -3,7 +3,6 @@ import { Book, GitPullRequestCreate, HomeIcon, User2Icon } from "lucide-react";
 import { FloatingNavbar } from "@/features/dashboard/FloatingNavbar";
 import { useAuthContext } from "@/context/AuthContext";
 import { useEffect } from "react";
-import MessageForm from "../MessageForm";
 
 export default function DashboardLayout() {
     const { pathname } = useLocation();
@@ -19,7 +18,6 @@ export default function DashboardLayout() {
             <FloatingNavbar navItems={navItems} />
             <main>
                 <Outlet />
-                <MessageForm />
             </main>
         </>
     );

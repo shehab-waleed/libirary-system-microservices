@@ -8,7 +8,6 @@ import { Toaster } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router";
 import { styled } from "styled-components";
 import { useAuthContext } from "@/context/AuthContext";
-import MessageForm from "../MessageForm";
 
 const StyleBody = styled.div`
     min-height: 93vh;
@@ -64,7 +63,6 @@ const HomeLayout = () => {
             <StyleBody>
                 <Outlet />
             </StyleBody>
-            <MessageForm />
             <Footer />
         </QueryClientProvider>
     );

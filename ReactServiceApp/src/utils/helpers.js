@@ -1,41 +1,43 @@
 import {
-	getTokenFromSession,
-	removeTokenFromSession,
+    getTokenFromSession,
+    removeTokenFromSession,
 } from "./tokenSessionActions";
 import { getUserFromSession } from "./userSessionActions";
 
 const API_PORTS = {
-	users: 8081,
+    users: 8081,
+    bookService: 9092,
+    borrowService: 9094,
 };
 
 export const apiCalling = async (
-	url,
-	method,
-	data,
-	headers,
-	noContentType = false,
-	requestType = "users"
+    url,
+    method,
+    data,
+    headers,
+    noContentType = false,
+    requestType = "users"
 ) => {
-	const apiUrl = `http://localhost:${API_PORTS[requestType]}/api/`;
-	const user = getUserFromSession();
+    const apiUrl = `http://localhost:${API_PORTS[requestType]}/api/`;
+    const user = getUserFromSession();
 
-	const defaultHeaders = {
-		...(noContentType ? {} : { "Content-Type": "application/json" }),
-		Accept: "application/json",
-		"Accept-Language": "en",
-		credentials: user?.id,
-	};
+    const defaultHeaders = {
+        ...(noContentType ? {} : { "Content-Type": "application/json" }),
+        Accept: "application/json",
+        "Accept-Language": "en",
+        credentials: user?.id,
+    };
 
-	const defaultOptions = {
-		method: method,
-		headers: { ...defaultHeaders, ...headers },
-	};
+    const defaultOptions = {
+        method: method,
+        headers: { ...defaultHeaders, ...headers },
+    };
 
-	if (method !== "GET") {
-		defaultOptions.body = data;
-	}
+    if (method !== "GET") {
+        defaultOptions.body = data;
+    }
 
-	const response = await fetch(`${apiUrl}${url}`, defaultOptions);
+    const response = await fetch(`${apiUrl}${url}`, defaultOptions);
 
-	return response;
+    return response;
 };
