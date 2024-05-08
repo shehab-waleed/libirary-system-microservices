@@ -1,0 +1,78 @@
+.gallery{
+ padding: 40px 20px;
+ background-color: #181A1B;
+ /* background-image: linear-gradient(to top, #30d0d092 0%, #330867aa 100%); */
+}
+.gallery .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    padding: 40px 0px;
+}
+.gallery .cards{
+    padding: 40px 20px;
+    width: fit-content;
+    height: 62vh;
+    row-gap: 100px;
+    column-gap: 20px;
+    display: flex;
+    overflow-x: auto;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    overflow-y: hidden;
+    margin-bottom: 40px;
+    position: relative;
+    animation: scroll 60s linear infinite;
+}
+@keyframes scroll {
+  0%
+  {
+    left: 0;
+  }
+  50%
+  {
+    left: -52%;
+  }
+  100%
+  {
+    left: 0;
+  }
+}
+.gallery h4{
+ color:#2F4858;
+}
+.gallery h2{
+    color:teal;
+    font-size: 60px;
+}
+.philosopher{
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .philosopherbold {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+ button{
+    /* margin-top: 40px; */
+    padding: 15px 5px;
+    background-color: #2F4858;
+    border-radius:3rem;
+    border:none ;
+    transition: all .5s;
+    /* display: none; */
+  }
+
+  .gallery button:hover{background-color: teal;}
+  .gallery .cards h1,.gallery .cards span{
+    color: white;
+  }
+  .scroller{
+    position: relative;
+    width: 100%;
+    overflow: none;
+  }

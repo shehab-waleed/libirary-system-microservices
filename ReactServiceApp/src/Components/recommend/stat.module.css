@@ -1,0 +1,60 @@
+.stat{
+    width: 100%;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.stat .container{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.element{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+text-align: center;
+justify-content:center ;
+width: 80%;
+height: calc(100vw/6);
+transition: all .5s;
+}
+.element:hover{
+transition: all .5s;
+border: solid teal 2px ;
+border-radius: 10px;
+transform: scale(1.1);
+}
+.element h3{
+    font-size: 1.625rem;
+    line-height: 29px;
+    padding: 10px 0 ;
+}
+.element h4{
+    font-size: 1rem;
+    color: rgb(85, 85, 85);
+        padding: 2px 0;
+}
+
+.icons
+{
+color:teal;
+    font-size: 26px;
+    padding: 10px 0;
+}
+.stat button{
+    background-color: rgb(0, 65, 65);
+    color:white;
+    width: 50%;
+    border-radius: 50px;
+    
+}

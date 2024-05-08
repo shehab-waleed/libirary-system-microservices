@@ -1,0 +1,13 @@
+.ErrMsg{
+    width: fit-content;
+    height: 25%;
+    border: #000 solid 0px ;
+    border-radius: 12px;
+    margin: 30px;
+}
+
+.ErrMsg p{
+color: red;
+font-size: 50px;
+font-weight: 600;
+}
