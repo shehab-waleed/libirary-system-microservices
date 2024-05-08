@@ -22,7 +22,7 @@ services:
     container_name: bookdb
     image: mysql:8.0.36
     volumes:
-          - D:\Projects\college\react\SA\sw-project\bookV:/var/lib/mysql
+      - D:\Projects\college\react\SA\sw-project\bookV:/var/lib/mysql
     ports:
       - "4040:3306"
     environment:
@@ -49,8 +49,8 @@ services:
   userdb:
     container_name: userdb
     image: mysql:8.0.36
-    volumes:
-      - D:\Projects\college\react\SA\sw-project\userV:/var/lib/mysql
+    # volumes:
+    #   - D:\Projects\college\react\SA\sw-project\userV:/var/lib/mysql
     ports:
       - "4041:3306"
     environment:
@@ -115,6 +115,3 @@ services:
       - "3000:3000"
     networks:
       - lms-network
-
-
-
