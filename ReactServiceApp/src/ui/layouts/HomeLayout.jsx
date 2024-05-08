@@ -31,9 +31,9 @@ const HomeLayout = () => {
         window.scrollTo(0, 0);
     }, [location]);
 
-    useEffect(() => {
-        if (!token) navigate(`/login?redirect=${pathname}`);
-    }, [pathname, token, navigate]);
+    // useEffect(() => {
+    //     if (!token) navigate(`/login?redirect=${pathname}`);
+    // }, [pathname, token, navigate]);
 
     return (
         <QueryClientProvider client={queryClient}>
